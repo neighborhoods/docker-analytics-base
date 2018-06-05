@@ -23,6 +23,7 @@ specified version of the `analytics-base` image to your local machine:
 
 ```
 VERSION="0.0.0"
+AWS_ACCOUNT_ID="$(aws sts get-caller-identity --output text --query 'Account')"
 REGISTRY="${AWS_ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com"
 IMAGE="${REGISTRY}/datascience/analytics-base"
 docker pull ${IMAGE}:${VERSION}
