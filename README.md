@@ -5,7 +5,7 @@
 Use the bash script provided and provide a version number.
 
 ```
-source build_and_push_image.sh 0.0.0
+source build_and_push_image.sh ${MAJOR}.${MINOR}.${PATCH}
 ```
 
 ## How to use the image
@@ -22,7 +22,7 @@ Run the following (having substrituted the correct version number) to pull the
 specified version of the `analytics-base` image to your local machine:
 
 ```
-VERSION="0.0.0"
+VERSION="0.0.1"
 AWS_ACCOUNT_ID="$(aws sts get-caller-identity --output text --query 'Account')"
 REGISTRY="${AWS_ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com"
 IMAGE="${REGISTRY}/datascience/analytics-base"
@@ -35,7 +35,7 @@ docker tag ${IMAGE}:${VERSION} analytics-base:${VERSION}
 You can start the container and exec into it with the following command:
 
 ```
-VERSION="0.0.0"
+VERSION="0.0.1"
 PORT="7777"
 docker run -it -p ${PORT}:8888 analytics-base:${VERSION}
 ```
