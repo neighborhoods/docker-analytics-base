@@ -8,7 +8,17 @@ Use the bash script provided and provide a version number.
 source build_and_push_image.sh ${MAJOR}.${MINOR}.${PATCH}
 ```
 
+The above code snippet will not work until you have your AWS credentials.
+
 ## How to use the image
+
+#### Step 0: Install `awscli` python package
+
+Install the following package(s) if you don't already.
+
+```
+pip install awscli
+```
 
 #### Step 1: log into AWS ECR registry
 
